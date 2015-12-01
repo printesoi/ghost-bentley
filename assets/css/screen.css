@@ -106,14 +106,14 @@ header#teaser h1 {
 /* Links
 ================================================== */
 a {
-  color: #F40034;
+  color: #036DA3;
   text-decoration: none;
   -webkit-transition: color .2s ease-in-out;
      -moz-transition: color .2s ease-in-out;
           transition: color .2s ease-in-out;
 }
 a:hover {
-  color: #F40034;
+  color: #036DA3;
 }
 
 /*  Layout
@@ -190,7 +190,7 @@ a:hover {
 }
 
 #logo h1 span{
-  color: #F40034 !important;
+  color: #036DA3 !important;
 }
 
 .nav li:first-child {
@@ -292,7 +292,7 @@ div.cover > img {
   line-height: 1.5;
 }
 .art-body-inner a:hover {
-  border-bottom: 1px solid #F40034;
+  border-bottom: 1px solid #036DA3;
   padding-bottom:2px;
 }
 .art-body-inner ul,
@@ -417,7 +417,7 @@ div.cover > img {
   color: #000;
 }
 .art-list-title a:hover {
-  color: #F40034;
+  color: #036DA3;
 }
 .art-list-item p {
   width: 65%;
@@ -462,6 +462,9 @@ div.cover > img {
 }
 .offsite-links {
   text-align: right;
+}
+.footer .facebook-link:hover {
+  color: #3A5795;
 }
 .footer .twitter-link:hover {
   color: #0084B4;
