@@ -1,5 +1,4 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
-@import url(//fonts.googleapis.com/css?family=Questrial);
 
 /* Reset & Basics (Inspired by E. Meyers)
 ================================================== */
@@ -185,7 +184,7 @@ a:hover {
   height: 30px;
   margin-left: 0px;
   letter-spacing: 1px;
-  font-family: 'Questrial', sans-serif;
+  font-family: "proxima-nova", "helvetica neue", "helvetica", sans-serif;
   font-size: 30px;
 }
 
