@@ -228,7 +228,8 @@ div.cover > img {
   height: 900px;
   /* Background image is defined in the post */
   background-position: top center;
-  background-attachment: fixed;
+  background-size: cover;
+  /*background-attachment: fixed;*/
   overflow: hidden;
 }
 /* Contains the time, title and subtitle for an article */
@@ -238,6 +239,7 @@ div.cover > img {
   left: 50%;
   margin-left: -490px;
 }
+
 .art-time,
 .art-title,
 .art-subtitle {
@@ -737,8 +739,10 @@ padding: 0;
   .abt .abt-subheader {
     font-size: 18px;
   }
+  pre {
+    padding: 0.5rem 0.3rem 0.5rem 0.5rem;
+  }
 }
-
 
 /*  Misc
 ================================================== */
@@ -843,4 +847,27 @@ hr.featured-article:after {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+nav.cover {
+    border-bottom: 1px solid white;
+}
+nav.cover a, nav.cover #logo h1 {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2), -1px -1px 1px rgba(0,0,0,0.2);
+}
+nav.cover h1 {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2), -1px -1px 1px rgba(0,0,0,0.2);
+}
+
+header.cover .art-title,
+header.cover .art-subtitle,
+header.cover .art-time {
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.3),
+        -1px -1px 0 rgba(0,0,0,0.1),
+        1px -1px 0 rgba(0,0,0,0.1),
+        -1px 1px 0 rgba(0,0,0,0.1),
+        1px 1px 0 rgba(0,0,0,0.2);
 }

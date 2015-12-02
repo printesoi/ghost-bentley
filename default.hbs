@@ -62,7 +62,12 @@
 
 {{! Menu }}
 {{#if post}}
+{{#if post.image}}
+<nav class="nav fixed cover">
+{{else}}
 <nav class="nav fixed">
+{{/if}}
+
 {{else}}
 <nav class="nav">
 {{/if}}

@@ -18,8 +18,6 @@ $(document).ready(function() {
   var $artHeader = $('.art-header');
   var $artTitle = $('.art-title');
   var $artSubtitle = $('.art-subtitle');
-  var $artTime = $('.art-time');
-  var artTitleFontSize = parseInt($artTitle.css('font-size'));
   var $nav = $('.nav');
   var windowScroll;
 
@@ -28,11 +26,7 @@ $(document).ready(function() {
 
   // Identify if visitor has a large enough viewport for parallaxing title
   function isLargeViewport() {
-    if($nav.css('position') == "relative") {
-      return false;
-    } else {
-      return true;
-    }
+    return ($nav.css('position') !== "relative");
   }
 
   // If large viewport and not mobile, parallax the title
@@ -64,7 +58,7 @@ $(document).ready(function() {
 
     //Slowly parallax the background of .art-header
     $artHeader.css({
-      'background-position' : 'center ' + (-windowScroll/8)+"px"
+      'background-position' : 'center ' + (+windowScroll/3)+"px"
     });
 
     //Fade the .nav out
@@ -78,41 +72,19 @@ $(document).ready(function() {
 		e.preventDefault();
 		$(window).scrollTop(0);
 	})
-  
-	// Cover image of the header
-	var $postImage = $('img[alt="cover"]');
-	if ( $postImage.length ) {
-		var postImageURL = $postImage.attr('src');
-		$('.art-header').css('background-image','url(' + postImageURL + ')');
-		$('.art-header').css('background-size','100%');
-		
-		// Change color scheme to white
-		$('#logo h1').css('color','white');
-		$('.art-title').css('color','white');
-		$('.art-subtitle').css('color','white');
-		$('.art-time').css('color','white');
-		$('.nav-primary li a').css('color','white');
-		
-		// Add Text Shadows
-		$('.art-title').css('text-shadow','3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(0,0,0,0.1), 1px -1px 0 rgba(0,0,0,0.1), -1px 1px 0 rgba(0,0,0,0.1), 1px 1px 0 rgba(0,0,0,0.1)');
-		$('.art-subtitle').css('text-shadow','3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(0,0,0,0.1), 1px -1px 0 rgba(0,0,0,0.1), -1px 1px 0 rgba(0,0,0,0.1), 1px 1px 0 rgba(0,0,0,0.1)');
-		$('.art-time').css('text-shadow','3px 3px 0 rgba(0,0,0,0.1), -1px -1px 0 rgba(0,0,0,0.1), 1px -1px 0 rgba(0,0,0,0.1), -1px 1px 0 rgba(0,0,0,0.1), 1px 1px 0 rgba(0,0,0,0.1)');
-		
-	}
-	$postImage.remove();
-	
+
 	// Subtitles
 	var $subtitle = $('span[id="subtitle"]');
 	if ( $subtitle.length ) {
 		var subtitleText = $('#subtitle').text();
 		$('.art-subtitle').html(subtitleText);
-		
+
 	}
 	$subtitle.remove();
-	
+
 	// Make punctuation smarter
 	jQuery.fn.smarten = (function() {
-	 
+
 	  function smartenNode(node) {
 		if (node.nodeType === 3) {
 		  node.data = node.data
@@ -129,15 +101,15 @@ $(document).ready(function() {
 		  } while (node = node.nextSibling);
 		}
 	  }
-	 
+
 	  return function() {
 		return this.each(function(){
 		  smartenNode(this);
 		});
 	  };
-	 
+
 	}());
-	 
+
 	// Instantiation
 	$('article').smarten();
 
